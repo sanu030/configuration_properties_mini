@@ -1,1 +1,42 @@
-msg: Welcome to the application sanu to=======
+  # Registered with Spring Boot Admin Server
+  # Admin Server is running on port 1111
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111
+
+
+        # Tell Spring Boot Admin to use the IP address
+        # instead of the computer hostname (SANU_TAREI)
+        instance:
+          service-host-type: ip		
+
+#server:
+  # Port on which Welcome-Service is running
+ # port: 8081
+
+eureka:
+  instance:
+    # Eureka normally gets the machine hostname.
+    # My Windows hostname is SANU_TAREI, but '_' is not valid
+    # in a URI hostname. Therefore, use localhost for local development.
+    # This makes the service available as localhost:8081 instead of SANU_TAREI:8081.
+    hostname: localhost
+
+# Eureka Client configuration is optional here because
+# Eureka Client can be auto-configured through the project dependencies.
+# If explicit Eureka Server registration is required, use:
+#
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka/
+
+# Exposes Spring Boot Actuator endpoints
+# Used for monitoring and health information.
+# Expose the refresh endpoint for dynamic configuration updates
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
