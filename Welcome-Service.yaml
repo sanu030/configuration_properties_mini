@@ -7,8 +7,8 @@ spring:
         url: http://localhost:1111
 
         # Use IP address instead of computer hostname
-        instance:
-          service-host-type: ip
+        #instance:
+         # service-host-type: ip
 
 # Port on which Welcome-Service is running
 server:
