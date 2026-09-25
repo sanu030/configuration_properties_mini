@@ -1,1 +1,29 @@
 msg: Good Morning Greet.yml....
+# Register Welcome-Service with Spring Boot Admin Server
+# Admin Server is running on port 1111
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111
+
+        # Use IP address instead of computer hostname
+        instance:
+          service-host-type: ip
+
+# Port on which Welcome-Service is running
+server:
+  port: 9091
+
+# Eureka instance configuration
+eureka:
+  instance:
+    # Use localhost instead of computer hostname for local development
+    hostname: localhost
+
+# Expose the Actuator refresh endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
