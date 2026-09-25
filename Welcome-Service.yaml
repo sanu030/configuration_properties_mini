@@ -25,6 +25,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh
+        include: "*"
 
 message: sanu added this message
